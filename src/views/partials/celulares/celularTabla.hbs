@@ -1,0 +1,47 @@
+{{#if celulares}}
+<table class="table table-bordered table-hover table-dark">
+    <thead>
+        <tr class="text-center">
+            <th>Num.</th>
+            <th>Clave</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>fechaLanzamiento</th>
+            <th>RAM</th>
+            <th>Almacenamiento</th>
+            <th>CantCamaras</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each celulares}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{clave}}</td>
+            <td>{{marca}}</td>
+            <td>{{precio}}</td>
+            <td>{{fechaLanzamiento}}</td>
+            <td>{{RAM}}</td>
+            <td>{{almacenamiento}}</td>
+            <td>{{cantCamaras}}</td>
+            <td>
+                {{#if opcion}}
+                <a href="/statusCelulares/{{_id}}" class="btn btn-warning">No disponible</a>
+                {{else}}
+                <a href="/statusCelulares/{{_id}}" class="btn btn-success">Disponible</a>
+                {{/if}}
+                <a href="/updateCelulares/{{_id}}" class="btn btn-info">Actualizar</a>
+                <a href="/deleteCelulares/{{_id}}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="text-center">
+        <h1>No hay celulares</h1>
+        <img src="/icons/rana.gif" class="w-75"/>
+    </div>
+</div>
+{{/if}}
