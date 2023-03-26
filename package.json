@@ -8,8 +8,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-win": "set CI=false&&rescripts build",
     "dev": "nodemon src/index.js --exec @babel-node",
-    "build": "babel src -d proyecto && ncp src/views proyecto/views && ncp src/frontend proyecto/frontend"
+    "build": "babel src -d proyecto && ncp src/views proyecto/views && ncp src/frontend proyecto/frontend && CI=false rescripts build"
   },
   "keywords": [],
   "author": "",
