@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.20.2",
     "ncp": "^2.0.0",
     "nodemon": "^2.0.20",
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "rescripts": "^0.0.1-security"
   }
 }
